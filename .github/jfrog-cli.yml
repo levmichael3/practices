@@ -1,0 +1,13 @@
+name: "Push Build to Jfrog Artifactory 🐸"
+run-name: ${{ github.actor }} push to jfrog 🐸
+on: [push]
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  
+  steps:
+  # This action checks out the code from the repository
+  - name: Checkout Code
+    uses: actions/checkout@v2
+  - uses: jfrog/setup-jfrog-cli@v4
+  - run: jf --version
