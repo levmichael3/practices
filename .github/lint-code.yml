@@ -1,5 +1,4 @@
 name: PR Lint code
-
 run-name: ${{ github.actor }} push to lint 🚀
 
 on:
