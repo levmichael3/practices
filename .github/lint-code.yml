@@ -1,24 +1,14 @@
-name: Lint code
+name: PR Lint code
 
-# **What it does**: Lints our code to ensure the code matches the specified code style.
-# **Why we have it**: We want some level of consistency to our code.
-# **Who does it impact**: Docs engineering, open-source engineering contributors.
+run-name: ${{ github.actor }} push to lint 🚀
 
 on:
   workflow_dispatch:
   pull_request:
     paths:
-      - '**.js'
-      - '**.mjs'
-      - '**.ts'
-      - '**.tsx'
       - '**.yaml'
       - '**.yml'
-      - '**.scss'
-      - .eslintrc.cjs
-      # In case something like eslint or tsc or prettier upgrades
       - 'package-lock.json'
-      # In case one of the script definitions changed
       - 'package.json'
 
 permissions:
