@@ -1,6 +1,17 @@
 name: "Push Build to Jfrog Artifactory 🐸"
 run-name: ${{ github.actor }} push to jfrog 🐸
 on: [push]
+workflow_dispatch:
+  inputs:
+    logLevel:
+      description: 'Log level'
+      required: true
+      default: 'warning'
+      type: choice
+      options:
+      - info
+      - warning
+      - debug
 jobs:
  build:
   runs-on: ubuntu-latest
